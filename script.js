@@ -64,16 +64,15 @@ const taskCreate = () => {
 
 };
 
-const deleteItem = () => {
-    
+const deleteItem = (e) => {
+    const button = e.target;
+
+    if (button.classList.contains('delete-button')) {
+        // closest = Pegar o elemento mais próximo, de baixo pra cima
+        const task = button.closest('.todo-container'); 
+        task.remove();
+    }
 }
 
-// // Função para os botões já existentes
-// const addItem = deleteButton.forEach(button => {
-//     button.addEventListener('click', () => {
-//         button.closest('.todo-container').querySelector('h3');
-//         createItem('item3', 'Jantar', 'Comer uma refeição rica em proteinas às 20:30');
-//     })
-// });
-
 createButton.addEventListener('click', taskCreate)
+container.addEventListener('click', deleteItem);
