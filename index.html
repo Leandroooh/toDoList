@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
+
+</head>
+
+<body class="flex">
+
+    <main class="container flex">
+
+        <div class="container-title">
+            <h1>Lista de Tarefas</h1>
+        </div>
+
+        <div class="list-container flex">
+
+            <div class="todo-container flex">
+                <div class="todo-text">
+                    <h3>Tomar Água</h3>
+                    <p>Beber 2L de água por dia, todos os dias</p>
+                </div>
+                <button class="delete-button">X</button>
+            </div>
+
+            <div class="todo-container flex" id="01">
+                <div class="todo-text">
+                    <h3>Caminhar</h3>
+                    <p>Caminhar 20KM todos os Dias</p>
+                </div>
+                <button class="delete-button">X</button>
+            </div>
+
+            <div class="todo-container flex">
+                <div class="todo-text">
+                    <h3>Correr</h3>
+                    <p>Correr 25KM por semana</p>
+                </div>
+                <button class="delete-button">X</button>
+            </div>
+
+        </div>
+
+
+        <section class="flex">
+            
+            <div class="input-container flex">
+                <input type="text" id="input-title" placeholder="Título">
+                <input type="text" id="input-description" placeholder="Descrição">
+                <button id="task-submit">+</button>
+            </div>
+
+        </section>
+    </main>
+
+</body>
+
+</html>
