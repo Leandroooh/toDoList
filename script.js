@@ -1,11 +1,13 @@
-const todoItems = document.querySelectorAll('.todo-container');
-const deleteButton = document.querySelectorAll('.delete-button');
 const container = document.querySelector('.list-container');
+const todoItems = document.querySelectorAll('.todo-container');
 
-const titleInput = document.getElementById('input-title');
-const descriptionInput = document.getElementById('description-title');
+const createButton = document.getElementById('task-submit');
+const deleteButton = document.querySelectorAll('.delete-button');
 
-const createTask = document.getElementById('task-submit');
+let titleInput = document.getElementById('input-title');
+let descriptionInput = document.getElementById('input-description');
+
+let identifier = 0;
 
 const createItem = (id, title, description) => {
     // Criando a div.todo-container+flex 
@@ -45,6 +47,27 @@ const createItem = (id, title, description) => {
     });
 }
 
+const taskCreate = () => {
+
+    let title = titleInput.value;
+    let desc = descriptionInput.value;
+
+    if ( title == '' || desc == '') {
+        alert('Você precisa informar o titulo e a descrição!');
+        return;
+    };
+
+    createItem(++identifier, title, desc);
+
+    titleInput.value = '';
+    descriptionInput.value = '';
+
+};
+
+const deleteItem = () => {
+    
+}
+
 // // Função para os botões já existentes
 // const addItem = deleteButton.forEach(button => {
 //     button.addEventListener('click', () => {
@@ -53,4 +76,4 @@ const createItem = (id, title, description) => {
 //     })
 // });
 
-deleteButton.addEventListener('click', addItem)
+createButton.addEventListener('click', taskCreate)
